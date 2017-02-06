@@ -11,6 +11,9 @@ import {GetVehicleListService} from './Services/get-vehicle-list.service';
 import { ModifyoptionsComponent } from './modifyoptions/modifyoptions.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { VehicleDescComponent } from './vehicle-desc/vehicle-desc.component';
+import { OrderByPipe } from './order-by.pipe';
+import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
+import { VehicleOrderPipe } from './vehicle-order.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { VehicleDescComponent } from './vehicle-desc/vehicle-desc.component';
     ProductComponent,
     ModifyoptionsComponent,
     VehicleComponent,
-    VehicleDescComponent
+    VehicleDescComponent,
+    OrderByPipe,
+    VehicleOrderPipe,
+    VehicleListComponent
   ],
   imports: [
     BrowserModule,
