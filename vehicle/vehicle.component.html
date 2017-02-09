@@ -1,0 +1,79 @@
+<!--
+<div>
+
+
+<div style="width:50% ; float:left">
+<table id="vehicleGrid" class="table table-striped table-hover table-bordered table-sortable" >
+  <thead>
+    <tr>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of jsonVehicleList" (click)="vehicleDesc(item)">
+      <td>{{item.manufacturer}}</td>
+      <td>{{item.model}}</td>
+      <td>{{item.year}}</td>
+    </tr>
+  </tbody>
+</table> 
+</div>
+
+ <div *ngIf="vehicleFlag==true" class="vipDiv" style="width: 40%;float: left;margin-left: 5%;">
+    <app-vehicle-desc [vehicleDataDesc]="item" ></app-vehicle-desc>
+</div>
+
+</div>-->
+
+
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <h1 class="dashboard_heading">
+          DASHBOARD
+        </h1>
+      </li>
+      <tr>
+        <th class="table-heading">
+          <p><span class="heading_name">Manufacturer <span (click)="ascName()">&uarr;</span><span (click)="descName()">&darr;</span></span>
+          </p>
+        </th>
+        <th class="table-heading">
+          <p><span class="heading">Year <span (click)="ascYear()">&uarr;</span><span (click)="descYear()">&darr;</span></span>
+          </p>
+        </th>
+        <th class="table-heading">
+          <p> <span class="heading">Model <span (click)="ascModel()">&uarr;</span><span (click)="descModel()">&darr;</span></span>
+          </p>
+        </th>
+      </tr>
+      <tr *ngFor="let item of jsonVehicleList">
+        <td>
+          <span class="details" (click)="vehicleDesc(item)">{{item.manufacturer}}</span>
+        </td>
+        <td class="table-heading">
+          <span class="details">{{item.year}}</span>
+        </td>
+        <td class="table-heading">
+          <span class="details">{{item.model}}</span>
+        </td>
+
+      </tr>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  <h1>For more Details Click on the Manufacturer from left side panel.</h1>
+  <div *ngIf="vehicleFlag==true" class="vipDiv">
+    <app-vehicle-desc [vehicleDataDesc]="item"></app-vehicle-desc>
+  </div>
+
+
+
+</div>
+<!-- /#wrapper -->
+<!-- Menu Toggle Script -->
